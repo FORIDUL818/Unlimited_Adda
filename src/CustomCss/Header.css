@@ -1,0 +1,44 @@
+.namvMain{
+    @apply bg-sixth flex justify-between items-center
+}
+.namvMain .NavBer{
+     @apply flex justify-between items-center w-full p-2
+}
+.namvMain .Icons{
+    @apply flex items-center justify-center gap-2 text-[#fff] ml-10
+}
+.namvMain .Icons svg {
+    @apply w-[30px] h-[30px]
+}
+
+.namvMain .NavBer .SearchBer .SearchInput {
+    @apply p-1 rounded-md mr-2 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] 
+}
+.namvMain .NavBer .SearchBer .SearchButton_v_1 {
+    @apply bg-primay rounded-lg p-1 uppercase ;
+} 
+
+/* profile pic end */
+.profile_imgase {
+    @apply w-[70px] h-[70px] flex bg-thirdary overflow-hidden rounded-full relative
+}
+.profile_imgase h4 {
+    @apply text-[18px]
+}
+.profile_imgase img {
+    @apply w-full h-full object-cover relative z-[1]
+    overflow-hidden
+}
+.profile_imgase .profile_upload {
+ @apply w-full h-full bg-secondary bg-opacity-[50%] absolute z-[2] flex justify-center items-center invisible duration-200 
+}
+.profile_imgase .profile_upload svg {
+    @apply text-2xl text-primay 
+}
+.profile_imgase:hover .profile_upload {
+    @apply visible 
+}
+
+.profile_upload{
+    transition: width 2s, height 2s, transform 2s;
+}

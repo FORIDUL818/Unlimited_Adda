@@ -1,0 +1,136 @@
+/* reagistration start  ==============================================================
+======================================================================================*/
+ /* body aria start*/
+ *{
+    font-family: 'Poppins', sans-serif;
+    
+   
+}
+/* body aria end */
+/* import aria star */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* import aria end */
+
+/* registration aria start */
+.Ragistration{
+    @apply container mx-auto md:flex md:justify-center md:items-center md:h-screen text-secondary lg:text-primay 
+}
+/* .Ragistration  .LeftSide {
+    @apply
+} */
+/* .Ragistration .RightSide{
+    @apply w-[50%]
+} */
+.Ragistration .Form {
+    @apply bg-sixth lg:bg-fith w-[100%] p-5 shadow-md rounded-md 
+}
+
+.Ragistration .Form h1 {
+    @apply uppercase text-[24px] font-oswold m-10 md:m-3 md:uppercase 
+    
+}
+.Ragistration .Form h3 {
+    @apply capitalize text-[18px] font-oswold mb-3
+    
+}
+/* registration aria end */
+
+.Ragistration .NamingForm label {
+  @apply flex justify-between pl-2
+}
+.Ragistration .NamingForm label input {
+    @apply w-[48%] md:p-1 border-[1px] border-secondary bg-primay text-fourth  text-secondary 
+}
+.Ragistration .eamailPass label{
+    @apply flex flex-col pl-[10px]
+}
+.Ragistration .eamailPass label input{
+    @apply p-1 border-[1px] border-secondary mb-2 bg-primay  text-secondary
+}
+.Ragistration .FormBtn {
+   @apply bg-thirdary w-[97%] p-2 uppercase rounded-md hover:bg-sixth ml-3 mb-2 mt-2
+}
+.btn_v_1{
+   @apply w-[100%] bg-thirdary p-2 rounded-md  hover:text-[#fff]
+}
+.btn_v_2{
+   @apply w-[100%] bg-sixth p-2 rounded-md hover:bg-seventh hover:text-[#fff]
+}
+#btnBlock{
+   @apply w-[100%] bg-thirdary p-2 rounded-md hover:bg-seventh hover:text-[#fff]
+}
+
+
+
+/* reagistration end ======================================================================
+============================================================================================ */
+/* Home section strat ======================================================================
+============================================================================================
+ */
+ .HomePage {
+    @apply container mx-auto  flex justify-between flex-wrap  gap-5 relative
+ }
+ .HomePage .title  {
+    @apply container mx-auto  flex justify-between flex-wrap  gap-5 
+ }
+ /* userList start */
+ .HomePage .UserList{
+     @apply w-[100%] lg:w-[32%] overflow-y-scroll h-[400px] text-primay
+    }
+    .HomePage .UserList .UserContent{
+      @apply  bg-fith p-3 mb-[5px]
+    }
+    .HomePage .UserList .UserContent .userName_pic{
+      @apply flex justify-between mb-2 border-b-2 p-2
+    }
+    .HomePage .UserList .UserContent .userName_picRapper{
+      @apply flex
+    }
+    .HomePage .UserList .UserContent .userName_picRapper .UserProfilePic{
+        @apply mr-3
+    }
+
+    .HomePage .UserList .UserContent .title{
+        @apply flex justify-between p-2 text-[24px] !mr-[-10px]
+    }
+    .HomePage .UserList .UserContent .UserProfilePic{
+        @apply w-[70px] h-[70px] bg-sixth rounded-full
+    }
+
+    /* userList end */
+ .HomePage .Friends{
+    @apply w-[32%] bg-thirdary overflow-y-scroll h-[400px]
+ }
+ .HomePage .GroupList{
+    @apply w-[32%] bg-thirdary overflow-y-scroll h-[400px]
+ }
+ .HomePage .FriendRequest{
+    @apply w-[32%] bg-thirdary overflow-y-scroll h-[400px]
+ }
+ .HomePage .Mygroup{
+    @apply w-[32%] bg-thirdary overflow-y-scroll h-[400px]
+ }
+ .HomePage .BlockUser{
+    @apply w-[32%] bg-thirdary overflow-y-scroll h-[400px]
+ }
+
+/* Home section strat =====================================================================
+===========================================================================================*/
+ 
+/* start imageupload modal  */
+   .imageUploadModal{
+    @apply absolute left-0 top-0 h-full w-full bg-sixth z-[999] flex justify-center items-center 
+   }
+   .imageUploadModal .imageUploadContainer{
+    @apply p-16 rounded-lg w-[70%] bg-primay
+   }  
+   .imageUploadContainer h1{
+    @apply text-3xl font-bold text-center 
+   }
+
+/* end imageupload modal  */

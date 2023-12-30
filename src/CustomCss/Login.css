@@ -1,0 +1,50 @@
+ /* body aria start*/
+ *{
+    font-family: 'Poppins', sans-serif;
+}
+/* body aria end */
+/* import aria star */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* import aria end */
+
+/* registration aria start */
+.Login{
+    @apply container h-screen mx-auto md:flex md:items-center text-secondary md:text-primay rounded-md
+}
+.Login  .LeftSide {
+    @apply lg:w-[100%] lg:flex lg:justify-center lg:items-center lg:text-center 
+}
+.Login .RightSide{
+    @apply w-[50%]
+}
+.Login .Form {
+    @apply bg-sixth lg:bg-fith w-[100%] lg:w-[60%] p-5 shadow-md rounded-md mr-10
+}
+
+.Login .Form h1 {
+    @apply uppercase text-[24px] font-oswold m-2
+    
+}
+.Login .Form h3 {
+    @apply capitalize text-[18px] font-oswold mb-3
+    
+}
+/* registration aria end */
+
+.Login .NamingForm label {
+  @apply flex justify-between px-4
+}
+.Login .NamingForm label input {
+    @apply w-[48%] md:p-1 border-[1px] border-secondary bg-primay text-fourth placeholder:text-secondary text-secondary
+}
+.Login .eamailPass label{
+    @apply flex flex-col p-4
+}
+.Login .eamailPass label input{
+    @apply p-1 border-[1px] border-secondary mb-2 bg-primay placeholder:text-secondary text-secondary
+}
