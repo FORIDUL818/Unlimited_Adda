@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 // import Lottie from "lottie-react";
 import { FaEye } from "react-icons/fa";   
 import { FaEyeSlash } from "react-icons/fa6"; 
-import { getAuth, createUserWithEmailAndPassword, } from "firebase/auth"; 
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { updateProfile } from "firebase/auth";
 import BeatLoader from "react-spinners/ClipLoader";
 import { getDatabase, ref, set } from "firebase/database";
@@ -113,7 +113,7 @@ const Registration = () => {
               photoURL:'../imgases/832.jpg'
             })
             .then(() => {
-                set(ref(db, 'users/' +auth.currentUser.uid), {
+                set(ref(db, 'user/' +auth.currentUser.uid), {
                   username: auth.currentUser.displayName,
                   email: auth.currentUser.email,
                  

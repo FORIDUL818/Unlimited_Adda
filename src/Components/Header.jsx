@@ -9,7 +9,7 @@ import  { Cropper } from "react-cropper";
 import "cropperjs/dist/cropper.css";
 import { data } from "autoprefixer";
 import { getDownloadURL, getStorage, ref, uploadString } from "firebase/storage";
-import { getAuth, updateProfile } from "firebase/auth";
+import { getAuth, signOut, updateProfile } from "firebase/auth";
 import { useDispatch, useSelector } from 'react-redux';
 import { userLoginInfo } from "../Redux/userSlice";
 
@@ -48,6 +48,7 @@ const Header = () => {
           // console.log(reader.result)
         };
         reader.readAsDataURL(files[0]);
+        setImage("")
       }
   // HanlgeCloseModal end
   // react copper end
@@ -75,13 +76,24 @@ const Header = () => {
   };
    const data =useSelector((state)=>state.userLoginInfo.user)
   // getcrop data end
+  // handleLogOut start
+  const handleLogOut =()=>{
+    signOut(auth)
+    .then(() => {
+      // Sign-out successful.
+      //call redux
+      dispatch(userLoginInfo(null));
+      localStorage.removeItem("user");
+      navigate("/login");
+  });
+  }
     return (
         <div className="namvMain">
        <nav className="NavBer">
           <div className="Icons">
           <IoIosHome />
           <AiFillMessage />
-          <GrLogout />
+          <GrLogout  onClick={handleLogOut}/>
           </div>
           <div className="SearchBer">
            <input type="text" className="SearchInput" placeholder="entry your data"/>
@@ -116,7 +128,7 @@ const Header = () => {
                 <div className="img-preview h-full w-full"></div>
               </div>:
                 <div className=" mb-5 w-32 h-32 mt-5 bg-secondary rounded-full mx-auto overflow-hidden ">
-                <img src={data?.photoURL} />
+                <img src={ profleImgae} />
               </div>
                
             }
@@ -129,7 +141,7 @@ const Header = () => {
             zoomTo={0.5}
             initialAspectRatio={1}
             preview=".img-preview"
-            src={image}
+            src={ image}
             viewMode={1}
             minCropBoxHeight={10}
             minCropBoxWidth={10}
