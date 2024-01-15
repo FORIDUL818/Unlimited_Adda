@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { useSelector } from "react-redux";
 import ProfilePic from "./ProfilePic";
+
 const Friends = () => {
     const db=getDatabase()
     const data =useSelector((state)=>state.userLoginInfo.user)
@@ -10,15 +11,17 @@ const Friends = () => {
     console.log(friendList)
     useEffect(()=>{
       const friendref=ref(db,"friend")
-       const list=[]
+
         onValue(friendref,(snapshot)=>{
+            const list=[]
            snapshot.forEach((item)=>{
             if(data.uid==item.val().reseverId || data.uid==item.val().senderId){
             list.push({...item.val(),id:item.key})
             }
            })
+           setFriendList(list)
         })
-        setFriendList(list)
+        
     },[])
     return (
         <div className="UserList">
@@ -33,8 +36,8 @@ const Friends = () => {
             return(
                 <div key={item} className="userName_pic">
                 <div className=" userName_picRapper">
-                <div className=" UserProfilePic">
-                    <ProfilePic id={item.id}/>
+                <div className=" UserProfilePic overflow-hidden">
+                <ProfilePic id={data.uid==item.senderId?item.reseverId:item.senderId}/>
                 </div>
                 <div className=" flex flex-col justify-center ">
                     {

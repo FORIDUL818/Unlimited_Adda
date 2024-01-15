@@ -104,15 +104,16 @@ const Registration = () => {
            setpasserrorMgs("this is not match")
         }
         else {
-          setLoading(true)
+         
           createUserWithEmailAndPassword(auth, email, password)
           .then((userCredential) =>{
-            setLoading(false)
-            updateProfile(auth.currentUser, {
+            setLoading(true)
+            updateProfile(auth.currentUser,{
               displayName:Fname, 
               photoURL:'../imgases/832.jpg'
             })
             .then(() => {
+              setLoading(false)
                 set(ref(db, 'user/' +auth.currentUser.uid), {
                   username: auth.currentUser.displayName,
                   email: auth.currentUser.email,

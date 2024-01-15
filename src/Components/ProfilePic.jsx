@@ -1,28 +1,25 @@
-import  { useEffect, useState } from 'react';
-import { getDownloadURL, getStorage,ref, } from 'firebase/storage';
-import profleImgae from '../imgases/832.jpg'
+import {  } from "firebase/database";
+import { getDownloadURL, getStorage,ref,uploadString } from "firebase/storage";
+import { useEffect, useState } from "react";
+import demoImage from "../imgases/832.jpg"
+
+
 const ProfilePic = ({id}) => {
+   const [ProfilePicture,setprofilepic]=useState('')
+   const storege=getStorage()
+   const imageref=ref(storege,id)
+   useEffect(()=>{
+    getDownloadURL(imageref).then((downloadURL) => {
+        setprofilepic(downloadURL)
+       });
+   },[])
 
-
-    const [profilePicture,setprofilePicture]=useState('')
-    const storage=getStorage();
-    const imgref=ref(storage,id);
-    useEffect(()=>{
-        getDownloadURL(imgref)
-        .then((downloadURL)=>{
-            setprofilePicture(downloadURL)
-        })
-    },[])
     return (
-
-
         <div>
-       
-           {
-            profilePicture?
-            <img src={profilePicture} alt="" />:
-            <img src={profleImgae}/>
-           }
+          {
+            ProfilePicture?<img src={ProfilePicture} alt="profilePictuer" />:
+            <img src={demoImage} alt="demoimage" srcset="" />
+          }
         </div>
     );
 };

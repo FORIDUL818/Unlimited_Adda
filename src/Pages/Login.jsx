@@ -62,10 +62,10 @@ const Login = () => {
          setLoading(true)
          signInWithEmailAndPassword(auth, email, password)
          .then((userCredential) => {
+            setLoading(false)
             const user = userCredential.user;
             Dispatch(userLoginInfo(user))
             localStorage.setItem("user", JSON.stringify(user));
-            setLoading(false)
            toast.success("successefull work")
           navgate ('/home')
 
@@ -133,5 +133,3 @@ const Login = () => {
 };
 
 export default Login;
-// Pa$$w0rd!
-// lyjumesim@mailinator.co

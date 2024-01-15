@@ -5,16 +5,16 @@ import { useSelector } from "react-redux";
 import ProfilePic from "./ProfilePic";
 
 
+
 const FriendRequest = () => {
     const data =useSelector((state)=>state.userLoginInfo.user)
     const [FriendRequest,setFriendRequstList]=useState([])
-  
       const db=getDatabase()
-
     useState(()=>{
-        const list=[]
+       
         const friendRef=ref(db,"friendRequest")
         onValue(friendRef,(snapshot)=>{
+            const list=[]
           snapshot.forEach((item)=>{
               if(item.val().reseverId==data.uid){
                 list.push({...item.val(),id:item.key})
@@ -45,8 +45,8 @@ const FriendRequest = () => {
             return (
                 <div key={item} className="userName_pic">
                 <div className=" userName_picRapper">
-                <div className="  UserProfilePic">
-                    <ProfilePic id={item.id}/>
+                <div className="  UserProfilePic overflow-hidden">
+                    <ProfilePic id={data.uid==item.senderId?item.reseverId:item.senderId}/>
                 </div>
                 <div className=" flex flex-col justify-center ">
                     <h1>{item.senderName}</h1>

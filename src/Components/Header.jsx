@@ -24,6 +24,7 @@ const Header = () => {
   const [modal,setmodal]=useState(false)
   const cropperRef = createRef();
   const navigate=useNavigate()
+  const data =useSelector((state)=>state.userLoginInfo.user)
 
 
   // HanlgeCloseModal start
@@ -74,7 +75,7 @@ const Header = () => {
       });
     }
   };
-   const data =useSelector((state)=>state.userLoginInfo.user)
+
   // getcrop data end
   // handleLogOut start
   const handleLogOut =()=>{
