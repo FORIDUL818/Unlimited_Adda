@@ -111,7 +111,7 @@ const Registration = () => {
             updateProfile(auth.currentUser,{
               displayName:Fname, 
               photoURL:'../imgases/832.jpg'
-            })
+            }) 
             .then(() => {
               setLoading(false)
                 set(ref(db, 'user/' +auth.currentUser.uid), {

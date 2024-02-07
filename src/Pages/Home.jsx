@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 const Home = () => {
     const navigate=useNavigate()
     const data =useSelector((state)=>state.userLoginInfo.user)
+    console.log(data)
     useEffect(()=>{
         if(!data){
          navigate('/login')

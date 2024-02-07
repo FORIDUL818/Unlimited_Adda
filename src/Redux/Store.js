@@ -1,7 +1,10 @@
-import { configureStore } from '@reduxjs/toolkit'
-import userSlice from './userSlice'
+import { configureStore } from '@reduxjs/toolkit';
+import userSlice from './userSlice';
+import activeSlice from './ActiveSlice';
+
 export default configureStore({
   reducer: {
-    userLoginInfo : userSlice
+    userLoginInfo: userSlice,
+    activeChat: activeSlice,
   },
-})
+});

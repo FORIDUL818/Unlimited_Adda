@@ -5,6 +5,7 @@ import { ToastContainer,  } from 'react-toastify';
 import Home from './Pages/Home';
 import HeadingLaout from "./Laout/HeadingLaout";
 import ForgetPass from "./Components/ForgetPass";
+import Chatting from './Pages/Chatting';
 
 const App = () => {
   const router=createBrowserRouter([
@@ -18,8 +19,13 @@ const App = () => {
       path:'/home',element:<HeadingLaout/>,
       children:[
         {
+          path:'home/chating',element:<Chatting/>
+        },
+        {
           path:'/home',element:<Home/>
-        }
+        },
+        
+     
       ]
     },
     {
@@ -28,6 +34,7 @@ const App = () => {
     {
       path:"/fogetPass",element:<ForgetPass/>
      },
+    
     
   ])
   return (

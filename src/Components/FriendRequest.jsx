@@ -10,9 +10,11 @@ const FriendRequest = () => {
     const data =useSelector((state)=>state.userLoginInfo.user)
     const [FriendRequest,setFriendRequstList]=useState([])
       const db=getDatabase()
-    useState(()=>{
+
+
+     useEffect(()=>{
        
-        const friendRef=ref(db,"friendRequest")
+     const friendRef=ref(db,"friendRequest")
         onValue(friendRef,(snapshot)=>{
             const list=[]
           snapshot.forEach((item)=>{
@@ -23,11 +25,11 @@ const FriendRequest = () => {
           })  
           setFriendRequstList(list)
         })
-    })
+    },[])
 
     // handleFriendrequestAccept start 
     const handleFriendrequestAccept=(item)=>{
-     set(push(ref(db, 'friend')),{...item})
+     set(push(ref(db, 'friend/')),{...item})
      .then(()=>{
       remove(ref(db, 'friendRequest/'+item.id))
      })
